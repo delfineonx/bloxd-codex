@@ -29,7 +29,7 @@
 > This repository may contain out-of-date or incorrect information at times, but maintainers try to keep it as correct and up to date as they can.<br>
 
 > [!TIP]<br>
-> Found something that should be added or changed? Please report issue on [discord]() or create a pull request!<br>
+> Found something that should be added or changed? Please report issue on [discord](https://discord.com/channels/804347688946237472/1457772930443382855) or create a pull request!<br>
 
 > [!IMPORTANT]
 > `The JavaScript can interact with the Bloxd.io game API.`<br>
