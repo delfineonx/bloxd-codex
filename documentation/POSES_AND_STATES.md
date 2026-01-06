@@ -1,11 +1,12 @@
+
 ---
 
 <div align="center">
   <h1>POSES & STATES</h1>
   <p>
-    <a href="#api-methods"><kbd>API Methods</kbd></a>
-    &nbsp;•&nbsp; <a href="#player-poses"><kbd>Player Poses</kbd></a>
-    &nbsp;•&nbsp; <a href="#physics-states"><kbd>Physics States</kbd></a>
+    <a href="#api-methods"><kbd>API Methods</kbd></a> &nbsp;•&nbsp; 
+    <a href="#player-poses"><kbd>Player Poses</kbd></a> &nbsp;•&nbsp; 
+    <a href="#physics-states"><kbd>Physics States</kbd></a>
   </p>
 </div>
 

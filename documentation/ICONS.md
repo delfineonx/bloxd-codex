@@ -1,10 +1,11 @@
+
 ---
 
 <div align="center">
   <h1>ICONS</h1>
   <p>
-    <a href="#ingame-icons"><kbd>In-game Icons</kbd></a>
-    &nbsp;•&nbsp; <a href="#font-awesome-icons"><kbd>Font Awesome Icons</kbd></a>
+    <a href="#ingame-icons"><kbd>In-game Icons</kbd></a> &nbsp;•&nbsp; 
+    <a href="#font-awesome-icons"><kbd>Font Awesome Icons</kbd></a>
   </p>
 </div>
 

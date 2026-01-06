@@ -1,10 +1,11 @@
+
 ---
 
 <div align="center">
   <h1>MUSIC</h1>
   <p>
-    <a href="#api-methods"><kbd>API Methods</kbd></a>
-    &nbsp;•&nbsp; <a href="#names"><kbd>Names</kbd></a>
+    <a href="#api-methods"><kbd>API Methods</kbd></a> &nbsp;•&nbsp; 
+    <a href="#names"><kbd>Names</kbd></a>
   </p>
 </div>
 
