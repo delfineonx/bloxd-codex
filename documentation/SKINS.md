@@ -1,11 +1,12 @@
+
 ---
 
 <div align="center">
   <h1>SKINS</h1>
   <p>
-    <a href="#api-methods"><kbd>API Methods</kbd></a>
-    &nbsp;•&nbsp; <a href="#cosmetic-types"><kbd>Cosmetic Types</kbd></a>
-    &nbsp;•&nbsp; <a href="#cosmetic-names"><kbd>Cosmetic Names</kbd></a>
+    <a href="#api-methods"><kbd>API Methods</kbd></a> &nbsp;•&nbsp; 
+    <a href="#cosmetic-types"><kbd>Cosmetic Types</kbd></a> &nbsp;•&nbsp; 
+    <a href="#cosmetic-names"><kbd>Cosmetic Names</kbd></a>
   </p>
 </div>
 

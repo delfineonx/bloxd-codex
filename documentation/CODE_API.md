@@ -1,11 +1,12 @@
+
 ---
 
 <div align="center">
   <h1>CODE API</h1>
   <p>
-    <a href="#intro"><kbd>Intro</kbd></a>
-    &nbsp;•&nbsp; <a href="#methods"><kbd>Methods</kbd></a>
-    &nbsp;•&nbsp; <a href="#glossary"><kbd>Glossary</kbd></a>
+    <a href="#intro"><kbd>Intro</kbd></a> &nbsp;•&nbsp; 
+    <a href="#methods"><kbd>Methods</kbd></a> &nbsp;•&nbsp; 
+    <a href="#glossary"><kbd>Glossary</kbd></a>
   </p>
 </div>
 
@@ -17,9 +18,16 @@
   <h2>❮ <code><b>Intro</b></code> ❯</h2> 
 </div>
 
-> [!IMPORTANT]
-> - **`globalThis.myId`**/**`api.myId`** and **`globalThis.playerId`**/**`api.playerId`** store the player id of who is executing the code block. It cannot be used the same way in World Code.<br>
-> - **`globalThis.thisPos`**/**`api.thisPos`** stores the possition array `[x, y, z]` of the currently executing code block. It cannot be used the same way in World Code.<br>
+> [!IMPORTANT]<br>
+> <code>"api" is global object (i.e. "globalThis.api")</code><br>
+> <code>It has fields and methods (described below) which are:</code><br>
+>   - [`non-writable`](https://javascript.info/property-descriptors#non-writable) (read-only, cannot be reassigned)<br>
+>   - [`non-enumerable`](https://javascript.info/property-descriptors#non-enumerable) (not listed in loops, such as `for..in`)<br>
+>   - [`non-configurable`](https://javascript.info/property-descriptors#non-configurable) (property cannot be deleted, and its attributes cannot be modified)<br>
+
+> [!NOTE]<br>
+> - **`globalThis.myId`**/**`api.myId`** and **`globalThis.playerId`**/**`api.playerId`** store the player id of who is executing the code block. It cannot be used the same way in `World Code`.<br>
+> - **`globalThis.thisPos`**/**`api.thisPos`** stores the possition array `[x, y, z]` of the currently executing code block. It cannot be used the same way in `World Code`.<br>
 > - **`api.ownerDbId`** stores the permanent (database) identifier of the world/lobby owner.<br>
 > - You can use **`api.log()`** or **`console.log()`** for printing and debugging (they do the same thing).<br>
 > - You can use **`Date.now()`** or **`api.now()`** — both return cached (~50 ms quantized) time in milliseconds.<br>

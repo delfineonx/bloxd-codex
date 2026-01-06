@@ -1,12 +1,13 @@
+
 ---
 
 <div align="center">
   <h1>MOB SETTINGS</h1>
   <p>
-    <a href="#api-methods"><kbd>API Methods</kbd></a>
-    &nbsp;•&nbsp; <a href="#settings"><kbd>Settings</kbd></a>
-    &nbsp;•&nbsp; <a href="#types-and-variations"><kbd>Types &amp; Variations</kbd></a>
-    &nbsp;•&nbsp; <a href="#usage"><kbd>Usage</kbd></a>
+    <a href="#api-methods"><kbd>API Methods</kbd></a> &nbsp;•&nbsp; 
+    <a href="#settings"><kbd>Settings</kbd></a> &nbsp;•&nbsp; 
+    <a href="#types-and-variations"><kbd>Types &amp; Variations</kbd></a> &nbsp;•&nbsp; 
+    <a href="#usage"><kbd>Usage</kbd></a>
   </p>
 </div>
 

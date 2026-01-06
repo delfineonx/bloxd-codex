@@ -1,11 +1,12 @@
+
 ---
 
 <div align="center">
   <h1>CLIENT OPTIONS</h1>
   <p>
-    <a href="#api-methods"><kbd>API Methods</kbd></a>
-    &nbsp;•&nbsp; <a href="#options"><kbd>Options</kbd></a>
-    &nbsp;•&nbsp; <a href="#extra-info"><kbd>Extra Info</kbd></a>
+    <a href="#api-methods"><kbd>API Methods</kbd></a> &nbsp;•&nbsp; 
+    <a href="#options"><kbd>Options</kbd></a> &nbsp;•&nbsp; 
+    <a href="#extra-info"><kbd>Extra Info</kbd></a>
   </p>
 </div>
 

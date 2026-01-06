@@ -1,11 +1,12 @@
+
 ---
 
 <div align="center">
   <h1>ENTITY SETTINGS</h1>
   <p>
-    <a href="#api-methods"><kbd>API Methods</kbd></a>
-    &nbsp;•&nbsp; <a href="#settings"><kbd>Settings</kbd></a>
-    &nbsp;•&nbsp; <a href="#extra-info"><kbd>Extra Info</kbd></a>
+    <a href="#api-methods"><kbd>API Methods</kbd></a> &nbsp;•&nbsp; 
+    <a href="#settings"><kbd>Settings</kbd></a> &nbsp;•&nbsp; 
+    <a href="#extra-info"><kbd>Extra Info</kbd></a> &nbsp;•&nbsp; 
   </p>
 </div>
 

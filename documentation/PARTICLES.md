@@ -3,10 +3,10 @@
 <div align="center">
   <h1>PARTICLES</h1>
   <p>
-    <a href="#api-methods"><kbd>API Methods</kbd></a>
-    &nbsp;•&nbsp; <a href="#texture-names"><kbd>Texture Names</kbd></a>
-    &nbsp;•&nbsp; <a href="#usage"><kbd>Usage</kbd></a>
-    &nbsp;•&nbsp; <a href="#extra-info"><kbd>Extra Info</kbd></a>
+    <a href="#api-methods"><kbd>API Methods</kbd></a> &nbsp;•&nbsp; 
+    <a href="#texture-names"><kbd>Texture Names</kbd></a> &nbsp;•&nbsp; 
+    <a href="#usage"><kbd>Usage</kbd></a> &nbsp;•&nbsp; 
+    <a href="#extra-info"><kbd>Extra Info</kbd></a>
   </p>
 </div>
 
