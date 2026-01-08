@@ -45,6 +45,7 @@
 > <code>"lifeform" means either player or mob.</code><br>
 > <code>"entity" could be player, mob, dropped item or mesh.</code><br>
 > <code>Some API methods may work correctly not with every entity type (mostly they are listed).</code><br>
+> <code>"EntityId", "LifeformId", "PlayerId", "MobId" are always strings that represent negative numbers.</code><br>
 
 <div align="center">
   <table>
@@ -273,7 +274,7 @@
 /**
  * Check an entity (player / mob / item / mesh) is still valid and executing.
  *
- * @param {PNull<EntityId>} [entityId]
+ * @param {EntityId} [entityId]
  * @returns {boolean}
  */
 checkValid(entityId)
@@ -917,7 +918,7 @@ playerIsInGame(playerId)
  * as well as the playerIds if available, of the party leader and members.
  *
  * @param {PlayerId} playerId
- * @returns {PNull<{ playerDbIds: PlayerDbId[] }>}
+ * @returns { { playerDbIds: PlayerDbId[] } | null }
  */
 getPlayerPartyWhenJoined(playerId)
 ```
@@ -929,7 +930,7 @@ getPlayerPartyWhenJoined(playerId)
  * Given the name of a player, get their id.
  *
  * @param {string} playerName
- * @returns {PNull<PlayerId>}
+ * @returns { PlayerId | null }
  */
 getPlayerId(playerName)
 ```
@@ -953,7 +954,7 @@ getPlayerDbId(playerId)
  * Returns null if player is not in lobby.
  *
  * @param {PlayerDbId} dbId
- * @returns {PNull<PlayerId>}
+ * @returns { PlayerId | null }
  */
 getPlayerIdFromDbId(dbId)
 ```
@@ -1554,7 +1555,7 @@ createMobHerd()
  *     height: number
  *   }>
  * }>} [options]
- * @returns {PNull<MobId>}
+ * @returns { MobId | null }
  *   - `null` if the mob could not be spawned.
  *     This can happen when there are too many mobs in the world
  *     for the current number of players in the lobby,
@@ -1692,7 +1693,7 @@ setBlock(x, y, z, blockName)
  * This ends up calling the `onWorldChangeBlock()` callback and only makes the change if not prevented by game.
  * `initiatorDbId` is null if the change was initiated by the game code.
  *
- * @param {PNull<PlayerDbId>} initiatorDbId
+ * @param { PlayerDbId | null } initiatorDbId
  * @param {number} x
  * @param {number} y
  * @param {number} z
@@ -1822,7 +1823,7 @@ getMetaInfo(blockName)
  *   - Don't throw an error if the block name is invalid.
  *   - Defaults false.
  *   - If true and name is invalid, returns null.
- * @returns {PNull<number>}
+ * @returns { number | null }
  */
 blockNameToBlockId(blockName, allowInvalidBlock)
 ```
@@ -2165,7 +2166,7 @@ removeItemName(playerId, itemName, amount)
  * @param {PlayerId} playerId
  * @param {number} itemSlotIndex - 0-indexed
  * @param {string} itemName - Can be "Air", in which case itemAmount will be ignored and the slot will be cleared.
- * @param {PNull<number>} [itemAmount] - `-1` for infinity. Should not be set, or `null`, for items that are not stackable.
+ * @param { number | null } [itemAmount] - `-1` for infinity. Should not be set, or `null`, for items that are not stackable.
  * @param {ItemAttributes} [attributes] - An optional object for certain types of item.
  * @param {boolean} [tellClient] - Whether to tell client about it - results in desync between client and server if client doesnt locally perform the same action.
  * @returns {void}
@@ -2181,7 +2182,7 @@ setItemSlot(playerId, itemSlotIndex, itemName, itemAmount, attributes, tellClien
  *
  * @param {PlayerId} playerId
  * @param {number} itemSlotIndex
- * @returns {PNull<InvenItem>}
+ * @returns { InvenItem | null }
  *   - `null` if there is no item at that index.
  *   - If there is an item, returns an object of the format { name: string, amount: PNull<number>, attributes: ItemAttributes }
  */
@@ -2195,9 +2196,9 @@ getItemSlot(playerId, itemSlotIndex)
  * Get the currently held item of a player.
  *
  * @param {PlayerId} playerId
- * @returns {PNull<InvenItem>}
+ * @returns { InvenItem | null }
  *   - `null` if no item is being held.
- *   - If an item is held, return an object of the format { name: itemName, amount: amountOfItem }
+ *   - If an item is held, return an object of the format { name: string, amount: PNull<number>, attributes: ItemAttributes }
  */
 getHeldItem(playerId)
 ```
@@ -2304,7 +2305,7 @@ clearInventory(playerId)
  * @param {number} chestX
  * @param {number} chestY
  * @param {number} chestZ
- * @returns {PNull<boolean>}
+ * @returns { boolean | null }
  *   - `true` if the player can open the chest.
  *   - `false` if they cannot.
  *   - `void` if the chest does not exist.
@@ -2335,7 +2336,7 @@ giveStandardChestItem(chestPos, itemName, itemAmount, playerId, attributes)
  * Get the amount of free slots in a standard chest.
  *
  * @param {number[]} chestPos
- * @returns {PNull<number>} - number; `null` for non-chests.
+ * @returns { number | null } - `null` for non-chests.
  */
 getStandardChestFreeSlotCount(chestPos)
 ```
@@ -2363,9 +2364,9 @@ getStandardChestItemAmount(chestPos, itemName)
  *
  * @param {[number, number, number]} chestPos
  * @param {number} slotIndex
- * @returns {PNull<InvenItem>}
+ * @returns { InvenItem | null }
  *   - `null` if empty.
- *   - otherwise format { name: itemName, amount: amountOfItem }
+ *   - otherwise format { name: string, amount: PNull<number>, attributes: ItemAttributes }
  */
 getStandardChestItemSlot(chestPos, slotIndex)
 ```
@@ -2406,8 +2407,7 @@ setStandardChestItemSlot(chestPos, slotIndex, itemName, itemAmount, playerId, at
  *
  * @param {PlayerId} playerId
  * @param {number} idx
- * @returns {PNull<InvenItem>}
- *   - `null` if empty.
+ * @returns { InvenItem | null } - `null` if empty.
  */
 getMoonstoneChestItemSlot(playerId, idx)
 ```
@@ -2462,7 +2462,9 @@ editItemCraftingRecipes(playerId, itemName, recipesForItem)
  * Reset the crafting recipes for a given back to its original bloxd state.
  *
  * @param {PlayerId} playerId
- * @param {PNull<string>} itemName - Resets all crafting recipes for the given player if `null`, otherwise resets the crafting recipes for the given item.
+ * @param { string | null } itemName
+ *   - resets all crafting recipes for the given player if `null`
+ *   - otherwise resets the crafting recipes for the given item.
  * @returns {void}
  */
 resetItemCraftingRecipes(playerId, itemName)
@@ -2475,7 +2477,9 @@ resetItemCraftingRecipes(playerId, itemName)
  * Removes crafting recipes.
  *
  * @param {PlayerId} playerId
- * @param {PNull<string>} itemName - Removes all crafting recipes for the given player if `null`, otherwise removes the crafting recipes for the given item.
+ * @param { string | null } itemName
+ *   - removes all crafting recipes for the given player if `null`,
+ *   - otherwise removes the crafting recipes for the given item.
  * @returns {void}
  */
 removeItemCraftingRecipes(playerId, itemName)
@@ -2491,11 +2495,11 @@ removeItemCraftingRecipes(playerId, itemName)
  * @param {number} y
  * @param {number} z
  * @param {string} itemName - Name of the item. Valid names can be found in blockMetadata.ts and itemMetadata.ts
- * @param {PNull<number>} [amount] - The amount of the item to include in the drop - so when the player picks up the item drop, they get this many of the item.
+ * @param { number | null } [amount] - The amount of the item to include in the drop - so when the player picks up the item drop, they get this many of the item.
  * @param {boolean} [mergeItems] - Whether to merge the item into an nearby item of same type, if one exists. Defaults to false.
  * @param {ItemAttributes} [attributes] - Attributes of the item being dropped
  * @param {number} [timeTillDespawn] - Time till the item automatically despawns in milliseconds. Max of 5 minutes (300_000 ms).
- * @returns {PNull<EntityId>} - The id you can pass to setCantPickUpItem, or null if the item drop limit was reached.
+ * @returns { EntityId | null } - The id you can pass to setCantPickUpItem, or null if the item drop limit was reached.
  */
 createItemDrop(x, y, z, itemName, amount, mergeItems, attributes, timeTillDespawn)
 ```
@@ -2563,7 +2567,7 @@ getInitialItemMetadata(itemName)
  *
  * If null is passed for lifeformId, this is simply its entry in blockMetadata etc.
  *
- * @param {PNull<LifeformId>} lifeformId
+ * @param { LifeformId | null } lifeformId
  * @param {string} itemName
  * @param {K} stat
  * @returns {AnyMetadataItem[K]}
@@ -2594,7 +2598,7 @@ now()
 /**
  * Get the name of the lobby this game is running in.
  *
- * @returns {PNull<string>}
+ * @returns { string | null }
  */
 getLobbyName()
 ```
@@ -2689,6 +2693,14 @@ enum WalkThroughType {
   CANT_WALK_THROUGH = 0,
   CAN_WALK_THROUGH = 1,
   DEFAULT_WALK_THROUGH = 2,
+}
+```
+
+```ts
+enum ExplosionType {
+  BOOM = 0,
+  FREEZE = 1,
+  BUBBLE = 2,
 }
 ```
 
