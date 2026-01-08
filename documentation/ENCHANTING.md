@@ -59,17 +59,41 @@ setItemSlot(playerId, itemSlotIndex, itemName, itemAmount, attributes, tellClien
 </div>
 
 ```js
-api.giveItem(playerId, "Diamond Sword", null, {
+api.giveItem(playerId, "Diamond Sword", 1, {
   // customDisplayName: "someName",
   // customDescription: "someDesc",
   customAttributes: {
     enchantments: {
-      "Critical Damage": 2,
-      "Damage": 5,
-      "Vertical Knockback": 3,
+      "Damage": 4,
+      "Critical Damage": 3,
+      "Vertical Knockback": 2,
       // ...
     },
-    // enchantmentTier: "Tier 4"
+    // enchantmentTier: "Tier 5"
+  }
+});
+```
+
+> [!TIP]<br>
+> `"slot" -> "item"`<br>
+> `  46   ->  helmet`<br>
+> `  47   ->  chestplate`<br>
+> `  48   ->  gauntlets`<br>
+> `  49   ->  leggings`<br>
+> `  50   ->  boots`<br>
+
+```js
+api.setItemSlot(playerId, 47, "Fur Chestplate", null, {
+  // customDisplayName: "someName",
+  // customDescription: "someDesc",
+  customAttributes: {
+    enchantments: {
+      "Protection": 5,
+      "Health": 10,
+      "Knockback Resist": 20,
+      // ...
+    },
+    // enchantmentTier: "Tier 1"
   }
 });
 ```
@@ -82,52 +106,30 @@ api.giveItem(playerId, "Diamond Sword", null, {
   <h2>❮ <code><b>Names</b></code> ❯</h2>
 </div>
 
-<div align="center">
-  <h4>
-    ✦ <code><b>Credits</b></code> ✦<br>
-    <b>Thanks to <code>the_ccccc</code> for creating and posting these!</b>
-  </h4> 
-</div>
-
 ```js
 enchantments_list = [
+  "Damage",
+  "Attack Speed".
+  "Critical Damage"
   "Protection",
   "Health",
   "Health Regen",
-  "Damage",
-  "Critical Damage",
-  "Attack Speed",
-  "Momentum",
-  "Break Speed",
-  "Yield",
-  "Aura",
-  "Stomp",
-  "Protection",
-  "Knockback",
+  "Stomp Damage",
+  "Knockback Resist",
   "Arrow Speed",
   "Arrow Damage",
-  "Quick Charge'" 
-  "Knockback Resist'" 
+  "Quick Charge",
+  "Break Speed",
+  "Momentum",
+  "Mining Yield",
+  "Farming Yield",
+  "Mining Aura",
+  "Digging Aura",
+  "Lumber Aura",
+  "Farming Aura",
   "Horizontal Knockback",
   "Vertical Knockback",
 ];
-```
-
-```js
-items_enchantments = {
-  "armor": ["Protection", "Health", "Health Regen"],
-  "sword": ["Damage", "Critical Damage", "Attack Speed"],
-  "pickaxe": ["Momentum", "Break speed", "Yield", "Aura"],
-  "hoe": ["Momentum", "Break Speed", "Yield", "Aura"],
-  "axe": ["Momentum", "Break Speed", "Aura"],
-  "spade": ["Momentum", "Break Speed", "Aura"],
-  "fur boots": ["Stomp", "Protection", "Health", "Health Regen"],
-  "knight sword": ["Damage", "Critical Damage", "Attack Speed", "Knockback"],
-  "moonstone pickaxe": ["Momentum", "Break Speed", "Aura"],
-  "bow": ["Arrow Speed", "Arrow Damage", "Quick Charge"],
-  "fur chestplate": ["Knockback Resist", "Protection", "Health", "Health Regen"],
-  "stick": ["Horizontal Knockback", "Vertical Knockback", "Damage"],
-};
 ```
 
 ---
@@ -141,7 +143,7 @@ items_enchantments = {
 <div align="center">
   <h4>
     ✦ <code><b>Credits</b></code> ✦<br>
-    <b>Thanks to <code>the_ccccc</code> for creating and posting these!</b>
+    <b>Thanks to <code>the_ccccc</code> for sharing these!</b>
   </h4> 
 </div>
 
