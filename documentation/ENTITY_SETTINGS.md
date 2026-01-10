@@ -302,17 +302,44 @@ type EntityMeshScalingMap = { [key in "TorsoNode" | "HeadMesh" | "ArmRightMesh" 
 ```
 
 ```ts
+type LobbyLeaderboardValues = {
+  [columnId: string]: number | string | CustomTextStyling
+}
+```
+
+```ts
+type CustomTextStyling = (string | EntityName | TranslatedText | StyledIcon | StyledText)[]
+```
+
+```ts
 type StyledText = {
-	str: string | EntityName | TranslatedText
-	style?: {
-	  color?: string
-	  colour?: string
-	  fontWeight?: string
-	  fontSize?: string
-	  fontStyle?: string
-	  opacity?: number
-	}
-	clickableUrl?: string
+  str: string | EntityName | TranslatedText
+  style?: {
+    color?: string
+    colour?: string
+    fontWeight?: string
+    fontSize?: string
+    fontStyle?: string
+    opacity?: number
+  }
+  clickableUrl?: string
+}
+```
+
+```ts
+type EntityName = {
+  entityName: string
+  style?: {
+    color?: string
+    colour?: string
+  }
+}
+```
+
+```ts
+type TranslatedText = {
+  translationKey: string
+  params?: Record<string, string | number | boolean | EntityName>
 }
 ```
 

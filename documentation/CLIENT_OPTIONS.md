@@ -1363,28 +1363,13 @@ strictFluidBuckets = true
 </div>
 
 ```ts
-type CustomTextStyling = (string | EntityName | TranslatedText | StyledIcon | StyledText)[]
-```
-
-```ts
-type StyledText = {
-	str: string | EntityName | TranslatedText
-	style?: {
-	  color?: string
-	  colour?: string
-	  fontWeight?: string
-	  fontSize?: string
-	  fontStyle?: string
-	  opacity?: number
-	}
-	clickableUrl?: string
-}
-```
-
-```ts
-type TranslatedText = {
-	translationKey: string
-	params?: Record<string, string | number | boolean | EntityName>
+type LobbyLeaderboardInfo = {
+  [columnId: string]: {
+    hidden?: boolean
+    displayName?: string | CustomTextStyling
+    sortPriority?: number
+    sortOrder?: "ascending" | "descending"
+  }
 }
 ```
 
@@ -1412,6 +1397,54 @@ sky_box_options = [
 	space_red,
 	underwater,
 ];
+```
+
+```ts
+type CustomTextStyling = (string | EntityName | TranslatedText | StyledIcon | StyledText)[]
+```
+
+```ts
+type EntityName = {
+  entityName: string
+  style?: {
+    color?: string
+    colour?: string
+  }
+}
+```
+
+```ts
+type TranslatedText = {
+  translationKey: string
+  params?: Record<string, string | number | boolean | EntityName>
+}
+```
+
+```ts
+type StyledIcon = {
+  icon: string
+  style?: {
+    color?: string
+    colour?: string
+    fontSize?: string
+    opacity?: number
+  }
+}
+```
+
+```ts
+type StyledText = {
+  str: string | EntityName | TranslatedText
+  style?: {
+    color?: string
+    colour?: string
+    fontWeight?: string
+    fontSize?: string
+    fontStyle?: string
+    opacity?: number
+  }
+  clickableUrl?: string
+}
 ```
 
 ---
