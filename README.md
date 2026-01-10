@@ -125,6 +125,7 @@
   <li><code><b><a href="documentation/MOB_SETTINGS.md">MOB_SETTINGS</a></b> — mob defaults and behavior tuning</code></li>
   <li><code><b><a href="documentation/ITEMS.md">ITEMS</a></b> — items & blocks list (external detailed reference)</code></li>
   <li><code><b><a href="documentation/ENCHANTING.md">ENCHANTING</a></b> — enchantments list, attributes, probabilities</code></li>
+  <li><code><b><a href="documentation/LOBBY_LEADERBOARD.md">LOBBY_LEADERBOARD</a></b> — lobby leaderboard columns, values, rendering, sorting</code></li>
   <li><code><b><a href="documentation/SOUNDS.md">SOUNDS</a></b> — sound API, names, and usage</code></li>
   <li><code><b><a href="documentation/MUSIC.md">MUSIC</a></b> — music client option names and usage</code></li>
   <li><code><b><a href="documentation/PARTICLES.md">PARTICLES</a></b> — particle API, textures, and usage</code></li>
