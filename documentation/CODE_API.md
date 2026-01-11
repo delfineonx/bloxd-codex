@@ -6,42 +6,52 @@
   <p>
     <a href="#intro"><kbd>Intro</kbd></a> &nbsp;•&nbsp; 
     <a href="#methods"><kbd>Methods</kbd></a> &nbsp;•&nbsp; 
-    <a href="#glossary"><kbd>Glossary</kbd></a>
+    <a href="#reference"><kbd>Reference</kbd></a>
   </p>
 </div>
 
 ---
 
 <a id="intro"></a>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Intro</b></code> ❯</h2>
+    </div>
+  </summary>
 
-<div align="center">
-  <h2>❮ <code><b>Intro</b></code> ❯</h2> 
-</div>
-
-> [!IMPORTANT]<br>
-> <code>"api" is global object (i.e. "globalThis.api")</code><br>
+> <h3><code><b>! IMPORTANT</b></code></h3>
+> <code>api</code> is global object (i.e. <code>globalThis.api</code>).<br>
 > <code>It has fields and methods (described below) which are:</code><br>
->   - [`non-writable`](https://javascript.info/property-descriptors#non-writable) (read-only, cannot be reassigned)<br>
->   - [`non-enumerable`](https://javascript.info/property-descriptors#non-enumerable) (not listed in loops, such as `for..in`)<br>
->   - [`non-configurable`](https://javascript.info/property-descriptors#non-configurable) (property cannot be deleted, and its attributes cannot be modified)<br>
+> <ul>
+>   <li><a href="https://javascript.info/property-descriptors#non-writable"><code>non-writable</code></a> — read-only (cannot be reassigned)</li>
+>   <li><a href="https://javascript.info/property-descriptors#non-enumerable"><code>non-enumerable</code></a> — not listed in loops (e.g. <code>for..in</code>)</li>
+>   <li><a href="https://javascript.info/property-descriptors#non-configurable"><code>non-configurable</code></a> — cannot be deleted, and its attributes cannot be modified</li>
+> </ul>
 
-> [!NOTE]<br>
-> - **`globalThis.myId`**/**`api.myId`** and **`globalThis.playerId`**/**`api.playerId`** store the player id of who is executing the code block. It cannot be used the same way in `World Code`.<br>
-> - **`globalThis.thisPos`**/**`api.thisPos`** stores the possition array `[x, y, z]` of the currently executing code block. It cannot be used the same way in `World Code`.<br>
-> - **`api.ownerDbId`** stores the permanent (database) identifier of the world/lobby owner.<br>
-> - You can use **`api.log()`** or **`console.log()`** for printing and debugging (they do the same thing).<br>
-> - You can use **`Date.now()`** or **`api.now()`** — both return cached (~50 ms quantized) time in milliseconds.<br>
-> - Comments like **`/* comment */`** and **`// comment`** work.
+> <h3><code><b>! NOTE</b></code></h3>
+> <ul>
+>   <li><b><code>globalThis.myId</code></b>/<b><code>api.myId</code></b> and <b><code>globalThis.playerId</code></b>/<b><code>api.playerId</code></b> store the player id of who is executing the code block. It cannot be used the same way in <code>World Code</code>.</li>
+>   <li><b><code>globalThis.thisPos</code></b>/<b><code>api.thisPos</code></b> stores the possition array <code>[x, y, z]</code> of the currently executing code block. It cannot be used the same way in <code>World Code</code>.</li>
+>   <li><b><code>api.ownerDbId</code></b> stores the permanent (database) identifier of the world/lobby owner.</li>
+>   <li>You can use <b><code>api.log()</code></b> or <b><code>console.log()</code></b> for printing and debugging (they do the same thing).</li>
+>   <li>You can use <b><code>Date.now()</code></b> or <b><code>api.now()</code></b> — both return cached (~50 ms quantized) time in milliseconds.</li>
+>   <li>Comments like <b><code>/* comment */</code></b> and <b><code>// comment</code></b> work.</li>
+> </ul>
+
+</details>
 
 ---
 
 <a id="methods"></a>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Methods</b></code> ❯</h2>
+    </div>
+  </summary>
 
-<div align="center">
-  <h2>❮ <code><b>Methods</b></code> ❯</h2> 
-</div>
-
-> [!NOTE]<br>
+> <h3><code><b>! NOTE</b></code></h3>
 > <code>"lifeform" means either player or mob.</code><br>
 > <code>"entity" could be player, mob, dropped item or mesh.</code><br>
 > <code>Some API methods may work correctly not with every entity type (mostly they are listed).</code><br>
@@ -553,7 +563,7 @@ applyMeleeHit(initiatorEntityId, hitEntityId, dirFacing, bodyPartHit, overrides)
  * Apply damage to a lifeform.
  * It is recommended to self-inflict damage when the game code wants to apply damage to a lifeform.
  *
- * @param {PlayerAttemptDamageOtherPlayerOpts} {
+ * @param {PlayerAttemptDamageOtherPlayerOptions} {
  *   initiatorEntityId,
  *   hitEntityId,
  *   attemptedDamageAmount,
@@ -676,8 +686,8 @@ scalePlayerMeshNodes(lifefromId, nodeScales)
  *
  * @param {EntityId} entityId
  * @param {EntityNamedNode} node - node to attach to
- * @param {PNull<MeshType>} type - if null, detaches mesh from this node
- * @param {MeshEntityOpts[MeshType]} [options]
+ * @param {MeshType|null} type - if null, detaches mesh from this node
+ * @param {MeshEntityOptions[MeshType]} [options]
  * @param {[number, number, number]} [offset]
  * @param {[number, number, number]} [rotation]
  * @returns {void}
@@ -1550,7 +1560,7 @@ createMobHerd()
  *   name: string
  *   playSoundOnSpawn: boolean
  *   variation: MobVariation<TMobType>
- *   physicsOpts: Partial<{
+ *   physicsOptions: Partial<{
  *     width: number
  *     height: number
  *   }>
@@ -2062,7 +2072,7 @@ raycastForBlock(fromPos, dirVec)
 /**
  * Play particle effect on all clients, or only on some clients if `clientPredictedBy` is specified.
  *
- * @param {TempParticleSystemOpts} options
+ * @param {TempParticleSystemOptions} options
  * @param {PlayerId} [clientPredictedBy] - Play only on clients where client with playerId clientPredictedBy is not invisible, transparent, or themselves.
  * @returns {void}
  */
@@ -2665,13 +2675,17 @@ setMaxPlayers(softMaxPlayers, maxPlayers)
 api.setCallbackValueFallback(callbackName, defaultValue)
 ```
 
+</details>
+
 ---
 
-<a id="glossary"></a>
-
-<div align="center">
-  <h2>❮ <code><b>Glossary</b></code> ❯</h2> 
-</div>
+<a id="reference"></a>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Reference</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```ts
 type ItemAttributes = { customDisplayName?: string; customDescription?: string; customAttributes?: Record<string, any> }
@@ -2711,45 +2725,34 @@ type WorldBlockChangedInfo = {
 ```
 
 ```ts
-type EntityMeshScalingMap = { [key in "TorsoNode" | "HeadMesh" | "ArmRightMesh" | "ArmLeftMesh" | "LegLeftMesh" | "LegRightMesh"]?: number[] }
-```
-
-```js
-type MeshTypes = [null, BloxdBlock, ParticleEmitter]
-```
-
-```js
-type BoxMeshTypes = [Person, Box, BlockBlock, ParticleEmitter]
+type CustomTextStyling = (string | EntityName | TranslatedText | StyledIcon | StyledText)[]
 ```
 
 ```ts
-type EarthSkyBox = {
-  type: "earth"
-  inclination?: number
-  turbidity?: number
-  infiniteDistance?: boolean
-  luminance?: number
-  yCameraOffset?: number
-  azimuth?: number
-  // Not part of sky model by default; heavily tint to a vertex color
-  vertexTint?: [number, number, number]
+type StyledText = {
+  str: string | EntityName | TranslatedText
+  style?: {
+    color?: string
+    colour?: string
+    fontWeight?: string
+    fontSize?: string
+    fontStyle?: string
+    opacity?: number
+  }
+  clickableUrl?: string
 }
 ```
 
-```js
-sky_box_options = [
-	default,
-	earth,
-	interstellar,
-	space_lightblue,
-	space_blue,
-	space_red,
-	underwater,
-];
-```
-
 ```ts
-type CustomTextStyling = (string | EntityName | TranslatedText | StyledIcon | StyledText)[]
+type StyledIcon = {
+  icon: string
+  style?: {
+    color?: string
+    colour?: string
+    fontSize?: string
+    opacity?: number
+  }
+}
 ```
 
 ```ts
@@ -2769,83 +2772,7 @@ type TranslatedText = {
 }
 ```
 
-```ts
-type StyledIcon = {
-  icon: string
-  style?: {
-    color?: string
-    colour?: string
-    fontSize?: string
-    opacity?: number
-  }
-}
-```
-
-```ts
-type StyledText = {
-  str: string | EntityName | TranslatedText
-  style?: {
-    color?: string
-    colour?: string
-    fontWeight?: string
-    fontSize?: string
-    fontStyle?: string
-    opacity?: number
-  }
-  clickableUrl?: string
-}
-```
-
-```ts
-type TempParticleSystemOpts = {
-  texture: string
-  minLifeTime: number
-  maxLifeTime: number
-  minEmitPower: number
-  maxEmitPower: number
-  minSize: number
-  maxSize: number
-  gravity: number[]
-  velocityGradients: {
-    timeFraction: number
-    factor: number
-    factor2: number
-  }[]
-  colorGradients: {
-    timeFraction: number
-    minColor: [number, number, number, number]
-    maxColor?: [number, number, number, number]
-  }[] | {
-    color: [number, number, number]
-  }[]
-  blendMode: ParticleSystemBlendMode
-  dir1: number[]
-  dir2: number[]
-  pos1: number[]
-  pos2: number[]
-  manualEmitCount: number
-  hideDist: number
-}
-```
-
-```ts
-enum ParticleSystemBlendMode {
-  // Source color is added to the destination color without alpha affecting the result
-  OneOne = 0,
-  // Blend current color and particle color using particle's alpha
-  Standard = 1,
-  // Add current color and particle color multiplied by particle's alpha
-  Add,
-  // Multiply current color with particle color
-  Multiply,
-  // Multiply current color with particle color then add current color and particle color multiplied by particle's alpha
-  MultiplyAdd,
-}
-```
-
-```ts
-type IngameIconName = "Damage" | "Damage Reduction" | "Speed" | "VoidJump" | "Fist" | "Frozen" | "Hydrated" | "Invisible" | "Jump Boost" | "Poisoned" | "Slowness" | "Weakness" | "Health Regen" | "Haste" | "Double Jump" | "Heat Resistance" | "Gliding" | "Boating" | "Obsidian Boating" | "Riding" | "Bunny Hop" | "FallDamage" | "Feather Falling" | "Thief" | "X-Ray Vision" | "Mining Yield" | "Brain Rot" | "Rested Damage" | "Rested Haste" | "Rested Speed" | "Rested Farming Yield" | "Rested Aura" | "Blindness" | "Pickpocketer" | "Lifesteal" | "Bounciness" | "Air Walk" | "Wall Climbing" | "Thorns" | "Draugr Knight Head" | "Damage Enchantment" | "Critical Damage Enchantment" | "Attack Speed Enchantment" | "Protection Enchantment" | "Health Enchantment" | "Health Regen Enchantment" | "Stomp Damage Enchantment" | "Knockback Resist Enchantment" | "Arrow Speed Enchantment" | "Arrow Damage Enchantment" | "Quick Charge Enchantment" | "Break Speed Enchantment" | "Momentum Enchantment" | "Mining Yield Enchantment" | "Farming Yield Enchantment" | "Mining Aura Enchantment" | "Digging Aura Enchantment" | "Lumber Aura Enchantment" | "Farming Aura Enchantment" | "Vertical Knockback Enchantment" | "Horizontal Knockback Enchantment" | "Self Yield" | "Friends" | "Riding Speed" | "Feed Aura" | "Double Poop" | "Mob Slayer" | "Rainbow Wool" | "Pack Leader" | "Max Health" | "Poison Claws" | "Mob Yield" | "Antlers Bonus" | "Health" | "HealthShield" | "Cross" | "Friendship" | "Dotted Friendship" | "Hunger" | "Empty Hunger" | "Pixelated Heart" | "Question Mark"
-```
+</details>
 
 ---
 

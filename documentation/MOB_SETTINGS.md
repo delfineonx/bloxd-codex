@@ -14,10 +14,12 @@
 ---
 
 <a id="api-methods"></a>
-
-<div align="center">
-	<h2>❮ <code><b>API Methods</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>API Methods</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```js
 /**
@@ -66,13 +68,17 @@ getMobSetting(mobId, setting, returnDefaultIfNotOverriden)
 setMobSetting(mobId, setting, value)
 ```
 
+</details>
+
 ---
 
 <a id="settings"></a>
-
-<div align="center">
-	<h2>❮ <code><b>Settings</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Settings</b></code> ❯</h2>
+    </div>
+  </summary>
 
 <div align="center">
   <table>
@@ -144,8 +150,6 @@ setMobSetting(mobId, setting, value)
 variation = "default"
 ```
 
----
-
 <a id="name"></a>
 
 ```js
@@ -154,8 +158,6 @@ variation = "default"
  */
 name = ""
 ```
-
----
 
 <a id="maxhealth"></a>
 
@@ -166,8 +168,6 @@ name = ""
 maxHealth = 75
 ```
 
----
-
 <a id="initialhealth"></a>
 
 ```js
@@ -176,8 +176,6 @@ maxHealth = 75
  */
 initialHealth = 75
 ```
-
----
 
 <a id="idlesound"></a>
 
@@ -188,8 +186,6 @@ initialHealth = 75
 idleSound = "pigOink"
 ```
 
----
-
 <a id="attacksound"></a>
 
 ```js
@@ -198,8 +194,6 @@ idleSound = "pigOink"
  */
 attackSound = null
 ```
-
----
 
 <a id="secondaryattacksound"></a>
 
@@ -210,8 +204,6 @@ attackSound = null
 secondaryAttackSound = null
 ```
 
----
-
 <a id="hurtsound"></a>
 
 ```js
@@ -221,13 +213,19 @@ secondaryAttackSound = null
 hurtSound = "pigHurt"
 ```
 
----
-
 <a id="ondeathitemdrops"></a>
 
 ```js
 /**
- * @type { { itemName: string; probabilityOfDrop: number; dropMinAmount: number; dropMaxAmount: number; applyBurstImpulseToDrop?: boolean; }[] }
+ * @type {
+ *   {
+ *     itemName: string;
+ *     probabilityOfDrop: number;
+ *     dropMinAmount: number;
+ *     dropMaxAmount: number;
+ *     applyBurstImpulseToDrop?: boolean;
+ *   }[]
+ * }
  */
 onDeathItemDrops = [
     {
@@ -239,8 +237,6 @@ onDeathItemDrops = [
 ]
 ```
 
----
-
 <a id="ondeathparticletexture"></a>
 
 ```js
@@ -249,8 +245,6 @@ onDeathItemDrops = [
  */
 onDeathParticleTexture = "critical_hit"
 ```
-
----
 
 <a id="ondeathaura"></a>
 
@@ -261,8 +255,6 @@ onDeathParticleTexture = "critical_hit"
 onDeathAura = 20
 ```
 
----
-
 <a id="basewalkingspeed"></a>
 
 ```js
@@ -271,8 +263,6 @@ onDeathAura = 20
  */
 baseWalkingSpeed = 3.5
 ```
-
----
 
 <a id="baserunningspeed"></a>
 
@@ -283,8 +273,6 @@ baseWalkingSpeed = 3.5
 baseRunningSpeed = 4.55 * 0.85
 ```
 
----
-
 <a id="walkingspeedmultiplier"></a>
 
 ```js
@@ -293,8 +281,6 @@ baseRunningSpeed = 4.55 * 0.85
  */
 walkingSpeedMultiplier = 1
 ```
-
----
 
 <a id="runningspeedmultiplier"></a>
 
@@ -305,8 +291,6 @@ walkingSpeedMultiplier = 1
 runningSpeedMultiplier = 1
 ```
 
----
-
 <a id="jumpcount"></a>
 
 ```js
@@ -315,8 +299,6 @@ runningSpeedMultiplier = 1
  */
 jumpCount = 0
 ```
-
----
 
 <a id="basejumpimpulsexz"></a>
 
@@ -327,8 +309,6 @@ jumpCount = 0
 baseJumpImpulseXZ = 0
 ```
 
----
-
 <a id="basejumpimpulsey"></a>
 
 ```js
@@ -337,8 +317,6 @@ baseJumpImpulseXZ = 0
  */
 baseJumpImpulseY = 0
 ```
-
----
 
 <a id="jumpmultiplier"></a>
 
@@ -349,8 +327,6 @@ baseJumpImpulseY = 0
 jumpMultiplier = 1
 ```
 
----
-
 <a id="runawayradius"></a>
 
 ```js
@@ -359,8 +335,6 @@ jumpMultiplier = 1
  */
 runAwayRadius = 0
 ```
-
----
 
 <a id="chaseradius"></a>
 
@@ -371,8 +345,6 @@ runAwayRadius = 0
 chaseRadius = 0
 ```
 
----
-
 <a id="territoryradius"></a>
 
 ```js
@@ -381,8 +353,6 @@ chaseRadius = 0
  */
 territoryRadius = 0
 ```
-
----
 
 <a id="hostilityradius"></a>
 
@@ -393,8 +363,6 @@ territoryRadius = 0
 hostilityRadius = 0
 ```
 
----
-
 <a id="stoppingradius"></a>
 
 ```js
@@ -403,8 +371,6 @@ hostilityRadius = 0
  */
 stoppingRadius = 0.5
 ```
-
----
 
 <a id="attackinterval"></a>
 
@@ -415,8 +381,6 @@ stoppingRadius = 0.5
 attackInterval = 0
 ```
 
----
-
 <a id="attackradius"></a>
 
 ```js
@@ -425,8 +389,6 @@ attackInterval = 0
  */
 attackRadius = 0
 ```
-
----
 
 <a id="secondaryattackradius"></a>
 
@@ -437,8 +399,6 @@ attackRadius = 0
 secondaryAttackRadius = 0
 ```
 
----
-
 <a id="attackdamage"></a>
 
 ```js
@@ -447,8 +407,6 @@ secondaryAttackRadius = 0
  */
 attackDamage = 0
 ```
-
----
 
 <a id="secondaryattackdamage"></a>
 
@@ -459,8 +417,6 @@ attackDamage = 0
 secondaryAttackDamage = 0
 ```
 
----
-
 <a id="attackimpulse"></a>
 
 ```js
@@ -469,8 +425,6 @@ secondaryAttackDamage = 0
  */
 attackImpulse = 0
 ```
-
----
 
 <a id="secondaryattackimpulse"></a>
 
@@ -481,8 +435,6 @@ attackImpulse = 0
 secondaryAttackImpulse = 0
 ```
 
----
-
 <a id="helditemname"></a>
 
 ```js
@@ -491,8 +443,6 @@ secondaryAttackImpulse = 0
  */
 heldItemName = null
 ```
-
----
 
 <a id="attackitemname"></a>
 
@@ -503,8 +453,6 @@ heldItemName = null
 attackItemName = null
 ```
 
----
-
 <a id="secondaryattackitemname"></a>
 
 ```js
@@ -513,8 +461,6 @@ attackItemName = null
  */
 secondaryAttackItemName = null
 ```
-
----
 
 <a id="attackeffectname"></a>
 
@@ -525,8 +471,6 @@ secondaryAttackItemName = null
 attackEffectName = null
 ```
 
----
-
 <a id="attackeffectduration"></a>
 
 ```js
@@ -536,8 +480,6 @@ attackEffectName = null
 attackEffectDuration = 0
 ```
 
----
-
 <a id="tameinfo"></a>
 
 ```js
@@ -545,90 +487,88 @@ attackEffectDuration = 0
  * @type {MobTameInfo}
  */
 tameInfo = {
-    tameItemName: [
-        "Raw Porkchop",
-        "Raw Beef",
-        "Raw Mutton",
-        "Raw Venison",
-        "Cooked Porkchop",
-        "Steak",
-        "Cooked Mutton",
-        "Cooked Venison"
-    ],
-    probabilityOfTame: 0.32,
-    isSaddleable: false,
-    supportsFriendship: true,
-    likedFoods: [
-        "Raw Porkchop",
-        "Raw Beef",
-        "Raw Mutton",
-        "Raw Venison",
-        "Cooked Porkchop",
-        "Steak",
-        "Cooked Mutton",
-        "Cooked Venison",
-        "Banana",
-        "Baked Potato",
-        "Rotten Brain"
-    ],
-    neutralFoods: [
-        "Catnip",
-        "Pumpkin Pie",
-        "Bowl of Cranberries",
-        "Watermelon Slice",
-        "Gold Watermelon Slice",
-        "Bread",
-        "Rotten Flesh",
-        "Mushroom Soup",
-        "Plum",
-        "Carrot",
-        "Beetroot",
-        "Raw Potato"
-    ],
-    dislikedFoods: [
-        "Apple",
-        "Wheat",
-        "Pear",
-        "Cherry",
-        "Bowl of Rice",
-        "Melon Slice",
-        "Gold Melon Slice",
-        "Chili Pepper",
-        "Cracked Coconut"
-    ],
-    foodItemsWithEffects: [
+  tameItemName: [
+    "Raw Porkchop",
+    "Raw Beef",
+    "Raw Mutton",
+    "Raw Venison",
+    "Cooked Porkchop",
+    "Steak",
+    "Cooked Mutton",
+    "Cooked Venison"
+  ],
+  probabilityOfTame: 0.32,
+  isSaddleable: false,
+  supportsFriendship: true,
+  likedFoods: [
+    "Raw Porkchop",
+    "Raw Beef",
+    "Raw Mutton",
+    "Raw Venison",
+    "Cooked Porkchop",
+    "Steak",
+    "Cooked Mutton",
+    "Cooked Venison",
+    "Banana",
+    "Baked Potato",
+    "Rotten Brain"
+  ],
+  neutralFoods: [
+    "Catnip",
+    "Pumpkin Pie",
+    "Bowl of Cranberries",
+    "Watermelon Slice",
+    "Gold Watermelon Slice",
+    "Bread",
+    "Rotten Flesh",
+    "Mushroom Soup",
+    "Plum",
+    "Carrot",
+    "Beetroot",
+    "Raw Potato"
+  ],
+  dislikedFoods: [
+    "Apple",
+    "Wheat",
+    "Pear",
+    "Cherry",
+    "Bowl of Rice",
+    "Melon Slice",
+    "Gold Melon Slice",
+    "Chili Pepper",
+    "Cracked Coconut"
+  ],
+  foodItemsWithEffects: [
+    {
+      itemName: "Catnip",
+      effects: [
         {
-            itemName: "Catnip",
-            effects: [
-                {
-                    name: "Speed",
-                    duration: 30000,
-                    level: 1
-                },
-                {
-                    name: "Damage",
-                    duration: 30000,
-                    level: 1
-                }
-            ]
+          name: "Speed",
+          duration: 30000,
+          level: 1
+        },
+        {
+          name: "Damage",
+          duration: 30000,
+          level: 1
         }
-    ],
-    guaranteedDrop: "Caught Fish",
-    commonDrops: [
-        "Poop",
-        "Wheat Seeds"
-    ],
-    levelUpBonuses: {
-        1: "Renaming",
-        2: "Special Drops",
-        3: "Damage +",
-        4: "Painting",
-        5: "Poison Claws"
+      ]
     }
+  ],
+  guaranteedDrop: "Caught Fish",
+  commonDrops: [
+    "Poop",
+    "Wheat Seeds"
+  ],
+  levelUpBonuses: {
+    1: "Renaming",
+    2: "Special Drops",
+    3: "Damage +",
+    4: "Painting",
+    5: "Poison Claws"
+  }
 }
 ```
-
----
 
 <a id="ontamedhealthmultiplier"></a>
 
@@ -639,8 +579,6 @@ tameInfo = {
 onTamedHealthMultiplier = 4.0
 ```
 
----
-
 <a id="ownerdbid"></a>
 
 ```js
@@ -649,8 +587,6 @@ onTamedHealthMultiplier = 4.0
  */
 ownerDbId = null
 ```
-
----
 
 <a id="minfollowingradius"></a>
 
@@ -661,8 +597,6 @@ ownerDbId = null
 minFollowingRadius = 5
 ```
 
----
-
 <a id="maxfollowingradius"></a>
 
 ```js
@@ -671,8 +605,6 @@ minFollowingRadius = 5
  */
 maxFollowingRadius = 12
 ```
-
----
 
 <a id="isrideable"></a>
 
@@ -683,18 +615,20 @@ maxFollowingRadius = 12
 isRideable = false
 ```
 
----
-
 <a id="healthregen"></a>
 
 ```js
 /**
- * @type { { amount: number; interval: number; startAfter: number; } }
+ * @type {
+ *   {
+ *     amount: number;
+ *     interval: number;
+ *     startAfter: number;
+ *   }
+ * }
  */
 healthRegen = null
 ```
-
----
 
 <a id="ridingspeedmult"></a>
 
@@ -705,8 +639,6 @@ healthRegen = null
 ridingSpeedMult = 1
 ```
 
----
-
 <a id="metainfo"></a>
 
 ```js
@@ -716,8 +648,6 @@ ridingSpeedMult = 1
 metaInfo = ""
 ```
 
----
-
 <a id="petinfo"></a>
 
 ```js
@@ -725,22 +655,26 @@ metaInfo = ""
  * @type {MobPetInfo}
  */
 petInfo = {
-    friendshipPoints: 0,
-    lastFedAt: null,
-    highestFriendshipLevelReached: 0,
-    superlikedFood: null,
-    superlikedFoodKnown: false,
-    bonusesGained: [],
+  friendshipPoints: 0,
+  lastFedAt: null,
+  highestFriendshipLevelReached: 0,
+  superlikedFood: null,
+  superlikedFoodKnown: false,
+  bonusesGained: [],
 }
 ```
+
+</details>
 
 ---
 
 <a id="types-and-variations"></a>
-
-<div align="center">
-	<h2>❮ <code><b>Types & Variations</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Types & Variations</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```json
 {
@@ -797,11 +731,17 @@ petInfo = {
 }
 ```
 
-<a id="usage"></a>
+</details>
 
-<div align="center">
-	<h2>❮ <code><b>Usage</b></code> ❯</h2> 
-</div>
+---
+
+<a id="usage"></a>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Usage</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```js
 // Quick helper to get all current values of mob settings for a specific mob.
@@ -868,5 +808,7 @@ getMobFullSettings = (mobId) => {
   return out;
 };
 ```
+
+</details>
 
 ---

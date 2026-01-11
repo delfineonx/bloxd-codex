@@ -13,10 +13,12 @@
 ---
 
 <a id="api-methods"></a>
-
-<div align="center">
-	<h2>❮ <code><b>API Methods</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>API Methods</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```js
 /**
@@ -51,41 +53,43 @@ setPlayerPhysicsState(playerId, physicsState)
 getPlayerPhysicsState(playerId)
 ```
 
+</details>
+
 ---
 
 <a id="player-poses"></a>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Player Poses</b></code> ❯</h2>
+    </div>
+  </summary>
 
-<div align="center">
-	<h2>❮ <code><b>Player Poses</b></code> ❯</h2> 
-</div>
-
-```txt
-standing
-sitting
-gliding
-driving
-sleeping
-riding
-zombie
+```js
+"standing"
+"sitting"
+"gliding"
+"driving"
+"sleeping"
+"riding"
+"zombie"
 ```
+
+</details>
 
 ---
 
 <a id="physics-states"></a>
-
-<div align="center">
-	<h2>❮ <code><b>Physics States</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Physics States</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```ts
+// tier meaning depends on type
 type PlayerPhysicsStateData = { type: VehicleType; tier: VehicleTier };
-// tier meaning depends on type:
-// PLAYER -> PlayerTier
-// BOAT -> BoatTier
-// GLIDER -> GliderTier
-// BALLOON -> BalloonTier
-// SLEEPING -> SleepingTier
-// RIDING_MOB -> RidingMobTier
 
 enum VehicleType {
   PLAYER = 0,
@@ -145,6 +149,8 @@ enum RidingMobTier {
   DEFAULT = 0,
 }
 ```
+
+</details>
 
 ---
 

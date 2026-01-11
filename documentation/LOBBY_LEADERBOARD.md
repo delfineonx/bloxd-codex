@@ -9,24 +9,26 @@
     <a href="#lobbyleaderboardinfo"><kbd>LobbyLeaderboardInfo</kbd></a> &nbsp;•&nbsp;
     <a href="#rendering"><kbd>Rendering</kbd></a> &nbsp;•&nbsp;
     <a href="#sorting"><kbd>Sorting</kbd></a> &nbsp;•&nbsp;
-    <a href="#extra-info"><kbd>Extra Info</kbd></a>
+    <a href="#types-reference"><kbd>Types Reference</kbd></a>
   </p>
 </div>
 
 <div align="center">
   <h4>
     ✦ <code><b>Credits</b></code> ✦<br>
-    <b>Information extracted and compiled by <code>delfineonx</code></b>
+    <b>Information was extracted and compiled by <code>delfineonx</code></b>
   </h4>
 </div>
 
 ---
 
 <a id="api-methods"></a>
-
-<div align="center">
-  <h2>❮ <code><b>API Methods</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>API Methods</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```js
 /**
@@ -54,13 +56,17 @@ api.setClientOption(playerId, option, value);
 api.setTargetedPlayerSettingForEveryone(targetedEntityId, settingName, settingValue, includeNewJoiners);
 ```
 
+</details>
+
 ---
 
 <a id="usage"></a>
-
-<div align="center">
-  <h2>❮ <code><b>Usage</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Usage</b></code> ❯</h2>
+    </div>
+  </summary>
 
 `Configure columns and sorting:`
 
@@ -154,26 +160,44 @@ api.setTargetedPlayerSettingForEveryone(playerId, "colorInLobbyLeaderboard", "#4
   <img src="../assets/images/lobby_leaderboard_example.png" alt="lobby_leaderboard_example.png" width="1080">
 </div>
 
-<br>
+> <h3><code><b>! NOTE</b></code></h3>
+> <ul>
+>   <li>
+>     <code>LobbyLeaderboardValues</code> describes the payload you send via the Bloxd API
+>     (<code>settingName = "lobbyLeaderboardValues"</code>), which updates the client's internal leaderboard state.
+>   </li>
+>   <li>
+>     In this documentation, that internal state is referred to as
+>     <code>clientLobbyLeaderboardValues</code> to avoid confusion.
+>   </li>
+>   <li>
+>     The client stores it per-player as
+>     <code>clientLobbyLeaderboardValues[playerId][columnId]</code>
+>     and may override some column ids (notably <code>"name"</code>).
+>   </li>
+> </ul>
 
-> [!NOTE]<br>
-> `LobbyLeaderboardValues` describes the payload you send via the Bloxd API (`settingName = "lobbyLeaderboardValues"`), which updates the client's internal leaderboard state.<br>
-> In this documentation, that internal state is referred to as `clientLobbyLeaderboardValues` to avoid confusion.<br>
-> The client stores it per-player as `clientLobbyLeaderboardValues[playerId][columnId]` and may override some keys (notably `"name"`).<br>
+</details>
 
 ---
 
-<div align="center">
-  <h2>❮ <code><b>Client UI Behaviour</b></code> ❯</h2> 
-</div>
+<a id="api-methods"></a>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Client UI</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ---
 
 <a id="lobbyleaderboardinfo"></a>
-
-<div align="left">
-  <h3>〔 <code><b>LobbyLeaderboardInfo</b></code> 〕</h3>
-</div>
+<details open>
+  <summary>
+    <div align="left">
+        <h3>〔 <code><b>LobbyLeaderboardInfo</b></code> 〕</h3>
+    </div>
+  </summary>
 
 `LobbyLeaderboardInfo` defines the column schema and sorting logic of the leaderboard UI.
 
@@ -192,13 +216,17 @@ type LobbyLeaderboardInfo = {
 }
 ```
 
+</details>
+
 ---
 
 <a id="rendering"></a>
-
-<div align="left">
-  <h3>〔 <code><b>Rendering</b></code> 〕</h3>
-</div>
+<details open>
+  <summary>
+    <div align="left">
+      <h3>〔 <code><b>Rendering</b></code> 〕</h3>
+    </div>
+  </summary>
 
 <div align="left">
   <h4>⊂ <code><b>columns</b></code> ⊃</h4> 
@@ -211,8 +239,9 @@ The UI renders columns in object key order:
   - if `hidden === true` -> column is skipped (no header and no cells)
   - otherwise, the header text is `displayName ?? ""`
 
-> [!NOTE]<br>
-> `sortPriority` affects sorting only — it does not reorder columns in the table header.<br>
+> <h3><code><b>! NOTE</b></code></h3>
+> <code>sortPriority</code> affects sorting only — it does not reorder columns in the table header.<br>
+
 
 <div align="left">
   <h4>⊂ <code><b>cell values</b></code> ⊃</h4> 
@@ -229,9 +258,9 @@ value = clientLobbyLeaderboardValues[playerId]?.[columnId]
   - `string` vs `string`
   - `number` vs `number`
 
-> [!NOTE]<br>
-> `clientLobbyLeaderboardValues` is the client-side object used for both rendering and sorting.<br>
-> It is populated by the API entity setting `"lobbyLeaderboardValues"`, but the UI may also modify it (see the `"name"` special-case).<br>
+> <h3><code><b>! NOTE</b></code></h3>
+> <code>clientLobbyLeaderboardValues</code> is the client-side object used for both rendering and sorting.<br>
+> It is populated by the API entity setting <code>"lobbyLeaderboardValues"</code>, but the UI may also modify it (see the <code>"name"</code> special-case).<br>
 
 <div align="left">
   <h4>⊂ <code><b>"name" special-case</b></code> ⊃</h4> 
@@ -241,18 +270,23 @@ The `"name"` column is modified by the client UI:
 
 - The client overwrites `clientLobbyLeaderboardValues[playerId].name` with a composite structure (tags + rank + styled name + cosmetics).
 - It is rendered with a custom component and is not treated as a normal leaderboard cell value.
-- This behavior is specific to the `"name"` column key.
+- This behavior is specific to the `"name"` column id.
+
+</details>
 
 ---
 
 <a id="sorting"></a>
+<details open>
+  <summary>
+    <div align="left">
+      <h3>〔 <code><b>Sorting</b></code> 〕</h3>
+    </div>
+  </summary>
+
 
 <div align="left">
-  <h3>〔 <code><b>Sorting</b></code> 〕</h3>
-</div>
-
-<div align="left">
-  <h4>⊂ <code><b>Lexicographic compare</b></code> ⊃</h4> 
+  <h4>⊂ <code><b>Lexicographic Compare</b></code> ⊃</h4> 
 </div>
 
 Players are sorted lexicographically by the ordered column list:
@@ -277,10 +311,10 @@ columnsByPriority.sort((a, b) => lobbyLeaderboardInfo[a].sortPriority - lobbyLea
 - lower `sortPriority` values are compared first
 - equal `sortPriority` values have unspecified relative order
 
-> [!WARNING]<br>
-> If `sortPriority` is missing/undefined, the subtraction can produce `NaN`.<br>
-> That makes the final `columnsByPriority` order unspecified (engine-dependent; often it appears to fall back to the insertion order of keys).<br>
-> Recommendation: set `sortPriority` explicitly for every column if you rely on own priority-based sorting.<br>
+> <h3><code><b>! WARNING</b></code></h3>
+> If <code>sortPriority</code> is missing/undefined, the subtraction can produce <code>NaN</code>.<br>
+> That makes the final <code>columnsByPriority</code> order unspecified (engine-dependent; often it appears to fall back to the insertion order of keys).<br>
+> Recommendation: set <code>sortPriority</code> explicitly for every column if you rely on own priority-based sorting.<br>
 
 <div align="left">
   <h4>⊂ <code><b>sortOrder</b></code> ⊃</h4> 
@@ -337,13 +371,19 @@ function sortPlayers(playerIds, info, values) {
 }
 ```
 
+</details>
+
+</details>
+
 ---
 
-<a id="extra-info"></a>
-
-<div align="center">
-  <h2>❮ <code><b>Extra Info</b></code> ❯</h2> 
-</div>
+<a id="types-reference"></a>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Types Reference</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```ts
 type LobbyLeaderboardInfo = {
@@ -367,19 +407,17 @@ type CustomTextStyling = (string | EntityName | TranslatedText | StyledIcon | St
 ```
 
 ```ts
-type EntityName = {
-  entityName: string
+type StyledText = {
+  str: string | EntityName | TranslatedText
   style?: {
     color?: string
     colour?: string
+    fontWeight?: string
+    fontSize?: string
+    fontStyle?: string
+    opacity?: number
   }
-}
-```
-
-```ts
-type TranslatedText = {
-  translationKey: string
-  params?: Record<string, string | number | boolean | EntityName>
+  clickableUrl?: string
 }
 ```
 
@@ -396,18 +434,22 @@ type StyledIcon = {
 ```
 
 ```ts
-type StyledText = {
-  str: string | EntityName | TranslatedText
+type EntityName = {
+  entityName: string
   style?: {
     color?: string
     colour?: string
-    fontWeight?: string
-    fontSize?: string
-    fontStyle?: string
-    opacity?: number
   }
-  clickableUrl?: string
 }
 ```
+
+```ts
+type TranslatedText = {
+  translationKey: string
+  params?: Record<string, string | number | boolean | EntityName>
+}
+```
+
+</details>
 
 ---
