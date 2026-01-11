@@ -6,17 +6,19 @@
   <p>
     <a href="#api-methods"><kbd>API Methods</kbd></a> &nbsp;•&nbsp; 
     <a href="#settings"><kbd>Settings</kbd></a> &nbsp;•&nbsp; 
-    <a href="#extra-info"><kbd>Extra Info</kbd></a> &nbsp;•&nbsp; 
+    <a href="#reference"><kbd>Reference</kbd></a>
   </p>
 </div>
 
 ---
 
 <a id="api-methods"></a>
-
-<div align="center">
-  <h2>❮ <code><b>API Methods</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>API Methods</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```js
 /**
@@ -83,13 +85,17 @@ setTargetedPlayerSettingForEveryone(targetedEntityId, settingName, settingValue,
 setEveryoneSettingForPlayer(playerId, settingName, settingValue, includeNewJoiners)
 ```
 
+</details>
+
 ---
 
 <a id="settings"></a>
-
-<div align="center">
-  <h2>❮ <code><b>Settings</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Settings</b></code> ❯</h2>
+    </div>
+  </summary>
 
 <div align="center">
   <table>
@@ -128,8 +134,6 @@ setEveryoneSettingForPlayer(playerId, settingName, settingValue, includeNewJoine
 opacity = 1
 ```
 
----
-
 <a id="zindex"></a>
 
 ```js
@@ -140,8 +144,6 @@ opacity = 1
  */
 zIndex = 0
 ```
-
----
 
 <a id="overlaycolour"></a>
 
@@ -154,8 +156,6 @@ zIndex = 0
 overlayColour = null
 ```
 
----
-
 <a id="canattack"></a>
 
 ```js
@@ -166,8 +166,6 @@ overlayColour = null
  */
 canAttack = false
 ```
-
----
 
 <a id="cansee"></a>
 
@@ -180,8 +178,6 @@ canAttack = false
 canSee = true
 ```
 
----
-
 <a id="showdamageamounts"></a>
 
 ```js
@@ -192,8 +188,6 @@ canSee = true
  */
 showDamageAmounts = true
 ```
-
----
 
 <a id="killfeedcolour"></a>
 
@@ -206,8 +200,6 @@ showDamageAmounts = true
 killfeedColour = ""
 ```
 
----
-
 <a id="meshscaling"></a>
 
 ```js
@@ -218,8 +210,6 @@ killfeedColour = ""
  */
 meshScaling = {}
 ```
-
----
 
 <a id="colorinlobbyleaderboard"></a>
 
@@ -232,8 +222,6 @@ meshScaling = {}
 colorInLobbyLeaderboard = ""
 ```
 
----
-
 <a id="lobbyleaderboardvalues"></a>
 
 ```js
@@ -244,8 +232,6 @@ colorInLobbyLeaderboard = ""
  */
 lobbyLeaderboardValues = {}
 ```
-
----
 
 <a id="nametaginfo"></a>
 
@@ -263,8 +249,6 @@ lobbyLeaderboardValues = {}
 nameTagInfo = null
 ```
 
----
-
 <a id="hasprioritynametag"></a>
 
 ```js
@@ -275,8 +259,6 @@ nameTagInfo = null
  */
 hasPriorityNametag = false
 ```
-
----
 
 <a id="namecolour"></a>
 
@@ -289,27 +271,17 @@ hasPriorityNametag = false
 nameColour = "default"
 ```
 
+</details>
+
 ---
 
-<a id="extra-info"></a>
-
-<div align="center">
-  <h2>❮ <code><b>Extra Info</b></code> ❯</h2> 
-</div>
-
-```ts
-type EntityMeshScalingMap = { [key in "TorsoNode" | "HeadMesh" | "ArmRightMesh" | "ArmLeftMesh" | "LegLeftMesh" | "LegRightMesh"]?: number[] }
-```
-
-```ts
-type LobbyLeaderboardValues = {
-  [columnId: string]: number | string | CustomTextStyling
-}
-```
-
-```ts
-type CustomTextStyling = (string | EntityName | TranslatedText | StyledIcon | StyledText)[]
-```
+<a id="reference"></a>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Reference</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```ts
 type StyledText = {
@@ -342,5 +314,7 @@ type TranslatedText = {
   params?: Record<string, string | number | boolean | EntityName>
 }
 ```
+
+</details>
 
 ---

@@ -14,10 +14,12 @@
 ---
 
 <a id="api-methods"></a>
-
-<div align="center">
-  <h2>❮ <code><b>API Methods</b></code> ❯</h2>
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>API Methods</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```js
 /**
@@ -50,13 +52,17 @@ giveItem(playerId, itemName, itemAmount, attributes)
 setItemSlot(playerId, itemSlotIndex, itemName, itemAmount, attributes, tellClient)
 ```
 
+</details>
+
 ---
 
 <a id="usage"></a>
-
-<div align="center">
-  <h2>❮ <code><b>Usage</b></code> ❯</h2>
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Usage</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```js
 api.giveItem(playerId, "Diamond Sword", 1, {
@@ -74,13 +80,13 @@ api.giveItem(playerId, "Diamond Sword", 1, {
 });
 ```
 
-> [!TIP]<br>
-> `"slot" -> "item"`<br>
-> `  46   ->  helmet`<br>
-> `  47   ->  chestplate`<br>
-> `  48   ->  gauntlets`<br>
-> `  49   ->  leggings`<br>
-> `  50   ->  boots`<br>
+> <h3><code><b>! TIP</b></code></h3>
+> <code>"slot" -> "item"</code><br>
+> <code>  46   ->  helmet</code><br>
+> <code>  47   ->  chestplate</code><br>
+> <code>  48   ->  gauntlets</code><br>
+> <code>  49   ->  leggings</code><br>
+> <code>  50   ->  boots</code><br>
 
 ```js
 api.setItemSlot(playerId, 47, "Fur Chestplate", null, {
@@ -98,47 +104,53 @@ api.setItemSlot(playerId, 47, "Fur Chestplate", null, {
 });
 ```
 
+</details>
+
 ---
 
 <a id="names"></a>
-
-<div align="center">
-  <h2>❮ <code><b>Names</b></code> ❯</h2>
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Names</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```js
-enchantments_list = [
-  "Damage",
-  "Attack Speed".
-  "Critical Damage"
-  "Protection",
-  "Health",
-  "Health Regen",
-  "Stomp Damage",
-  "Knockback Resist",
-  "Arrow Speed",
-  "Arrow Damage",
-  "Quick Charge",
-  "Break Speed",
-  "Momentum",
-  "Mining Yield",
-  "Farming Yield",
-  "Mining Aura",
-  "Digging Aura",
-  "Lumber Aura",
-  "Farming Aura",
-  "Horizontal Knockback",
-  "Vertical Knockback",
-];
+"Damage",
+"Attack Speed".
+"Critical Damage"
+"Protection",
+"Health",
+"Health Regen",
+"Stomp Damage",
+"Knockback Resist",
+"Arrow Speed",
+"Arrow Damage",
+"Quick Charge",
+"Break Speed",
+"Momentum",
+"Mining Yield",
+"Farming Yield",
+"Mining Aura",
+"Digging Aura",
+"Lumber Aura",
+"Farming Aura",
+"Horizontal Knockback",
+"Vertical Knockback",
 ```
+
+</details>
 
 ---
 
 <a id="probabilities"></a>
-
-<div align="center">
-  <h2>❮ <code><b>Probabilities</b></code> ❯</h2>
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Probabilities</b></code> ❯</h2>
+    </div>
+  </summary>
 
 <div align="center">
   <h4>
@@ -237,6 +249,8 @@ level_probs_by_input = {
   1: [(5, 0.00003), (4, 0.0044), (3, 0.0180), (2, 0.1915), (1, 0.78607)], // was 7861, fixed for =1
 }
 ```
+
+</details>
 
 ---
 

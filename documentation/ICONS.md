@@ -12,10 +12,12 @@
 ---
 
 <a id="ingame-icons"></a>
-
-<div align="center">
-  <h2>❮ <code><b>In-game Icons</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>In-game Icons</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```js
 in_game_icons = [
@@ -41,19 +43,23 @@ in_game_icons = [
 ];
 ```
 
+</details>
+
 ---
 
 <a id="font-awesome-icons"></a>
-
-<div align="center">
-  <h2>❮ <code><b>Font Awesome Icons</b></code> ❯</h2> 
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Font Awesome Icons</b></code> ❯</h2>
+    </div>
+  </summary>
 
 <div align="center">
   <h4>
     ✦ <code><b>Credits</b></code> ✦<br>
-    <b>Thanks to <code>FrostyCaveman</code> and <code>WBSTP</code> for creating and posting these!</b>
-   /h4> 
+    <b>Thanks to <code>FrostyCaveman</code> and <code>WBSTP</code> for sharing these!</b>
+  </h4> 
 </div>
 
 <div align="center">
@@ -101,8 +107,6 @@ in_game_icons = [
 `arrows-rotate`  
 `award`  
 
----
-
 <a id="b"></a>
 <div align="left">
   <h3>〔 <code><b>B</b></code> 〕</h3> 
@@ -112,8 +116,6 @@ in_game_icons = [
 `bars`  
 `block-question`  
 `bolt`  
-
----
 
 <a id="c"></a>
 <div align="left">
@@ -138,8 +140,6 @@ in_game_icons = [
 `cube`  
 `cubes`  
 
----
-
 <a id="d"></a>
 <div align="left">
   <h3>〔 <code><b>D</b></code> 〕</h3> 
@@ -150,8 +150,6 @@ in_game_icons = [
 `door-closed`  
 `door-open`  
 `download`  
-
----
 
 <a id="e"></a>
 <div align="left">
@@ -164,8 +162,6 @@ in_game_icons = [
 `expand`  
 `eye`  
 `eye-slash`  
-
----
 
 <a id="f"></a>
 <div align="left">
@@ -181,8 +177,6 @@ in_game_icons = [
 `flag`  
 `folder-image`  
 
----
-
 <a id="g"></a>
 <div align="left">
   <h3>〔 <code><b>G</b></code> 〕</h3> 
@@ -192,8 +186,6 @@ in_game_icons = [
 `gear`  
 `gem`  
 `globe`  
-
----
 
 <a id="h"></a>
 <div align="left">
@@ -209,8 +201,6 @@ in_game_icons = [
 `heart-music-camera-bolt`  
 `history`  
 
----
-
 <a id="i"></a>
 <div align="left">
   <h3>〔 <code><b>I</b></code> 〕</h3> 
@@ -219,16 +209,12 @@ in_game_icons = [
 `icons`  
 `info-circle`  
 
----
-
 <a id="j"></a>
 <div align="left">
   <h3>〔 <code><b>J</b></code> 〕</h3> 
 </div>
 
 `joystick`  
-
----
 
 <a id="l"></a>
 <div align="left">
@@ -243,8 +229,6 @@ in_game_icons = [
 `lock`  
 `lock-open`  
 
----
-
 <a id="m"></a>
 <div align="left">
   <h3>〔 <code><b>M</b></code> 〕</h3> 
@@ -257,16 +241,12 @@ in_game_icons = [
 `minus-square`  
 `music`  
 
----
-
 <a id="n"></a>
 <div align="left">
   <h3>〔 <code><b>N</b></code> 〕</h3> 
 </div>
 
 `navicon`  
-
----
 
 <a id="p"></a>
 <div align="left">
@@ -281,8 +261,6 @@ in_game_icons = [
 `planet-ringed`  
 `power-off`  
 
----
-
 <a id="r"></a>
 <div align="left">
   <h3>〔 <code><b>R</b></code> 〕</h3> 
@@ -293,8 +271,6 @@ in_game_icons = [
 `right-from-bracket`  
 `rotate-forward`  
 `rotate-right`  
-
----
 
 <a id="s"></a>
 <div align="left">
@@ -314,8 +290,6 @@ in_game_icons = [
 `star`  
 `sync`  
 
----
-
 <a id="t"></a>
 <div align="left">
   <h3>〔 <code><b>T</b></code> 〕</h3> 
@@ -327,8 +301,6 @@ in_game_icons = [
 `terminal`  
 `trophy`  
 `tshirt`  
-
----
 
 <a id="u"></a>
 <div align="left">
@@ -344,8 +316,6 @@ in_game_icons = [
 `user-unlock`  
 `users-crown`  
 
----
-
 <a id="v"></a>
 <div align="left">
   <h3>〔 <code><b>V</b></code> 〕</h3> 
@@ -356,16 +326,12 @@ in_game_icons = [
 `volume-down`  
 `volume-low`  
 
----
-
 <a id="w"></a>
 <div align="left">
   <h3>〔 <code><b>W</b></code> 〕</h3> 
 </div>
 
 `wrench`  
-
----
 
 <a id="x"></a>
 <div align="left">
@@ -374,8 +340,6 @@ in_game_icons = [
 
 `x`  
 
----
-
 <a id="y"></a>
 <div align="left">
   <h3>〔 <code><b>Y</b></code> 〕</h3> 
@@ -383,14 +347,14 @@ in_game_icons = [
 
 `youtube`  
 
----
-
 <a id="z"></a>
 <div align="left">
   <h3>〔 <code><b>Z</b></code> 〕</h3> 
 </div>
 
 `zap`  
+
+</details>
 
 ---
 

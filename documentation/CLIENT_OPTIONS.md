@@ -6,17 +6,19 @@
   <p>
     <a href="#api-methods"><kbd>API Methods</kbd></a> &nbsp;•&nbsp; 
     <a href="#options"><kbd>Options</kbd></a> &nbsp;•&nbsp; 
-    <a href="#extra-info"><kbd>Extra Info</kbd></a>
+    <a href="#reference"><kbd>Reference</kbd></a>
   </p>
 </div>
 
 ---
 
 <a id="api-methods"></a>
-
-<div align="center">
-	<h2>❮ <code><b>API Methods</b></code> ❯</h2>
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>API Methods</b></code> ❯</h2>
+    </div>
+  </summary>
 
 
 ```js
@@ -65,13 +67,17 @@ setClientOptions(playerId, optionsObject)
 setClientOptionToDefault(playerId, option)
 ```
 
+</details>
+
 ---
 
 <a id="options"></a>
-
-<div align="center">
-	<h2>❮ <code><b>Options</b></code> ❯</h2>
-</div>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Options</b></code> ❯</h2>
+    </div>
+  </summary>
 
 <div align="center">
   <table>
@@ -299,7 +305,6 @@ setClientOptionToDefault(playerId, option)
     </tbody>
   </table>
 </div>
-
 
 ---
 
@@ -1354,24 +1359,17 @@ ttbMultiplier = 1
 strictFluidBuckets = true
 ```
 
+</details>
+
 ---
 
-<a id="extra-info"></a>
-
-<div align="center">
-	<h2>❮ <code><b>Extra Info</b></code> ❯</h2>
-</div>
-
-```ts
-type LobbyLeaderboardInfo = {
-  [columnId: string]: {
-    hidden?: boolean
-    displayName?: string | CustomTextStyling
-    sortPriority?: number
-    sortOrder?: "ascending" | "descending"
-  }
-}
-```
+<a id="reference"></a>
+<details open>
+  <summary>
+    <div align="center">
+      <h2>❮ <code><b>Reference</b></code> ❯</h2>
+    </div>
+  </summary>
 
 ```ts
 type EarthSkyBox = {
@@ -1388,19 +1386,46 @@ type EarthSkyBox = {
 ```
 
 ```js
-sky_box_options = [
-	default,
-	earth,
-	interstellar,
-	space_lightblue,
-	space_blue,
-	space_red,
-	underwater,
+sky_box_types = [
+	"default",
+	"earth",
+	"interstellar",
+	"space_lightblue",
+	"space_blue",
+	"space_red",
+	"underwater",
 ];
 ```
 
 ```ts
 type CustomTextStyling = (string | EntityName | TranslatedText | StyledIcon | StyledText)[]
+```
+
+```ts
+type StyledText = {
+  str: string | EntityName | TranslatedText
+  style?: {
+    color?: string
+    colour?: string
+    fontWeight?: string
+    fontSize?: string
+    fontStyle?: string
+    opacity?: number
+  }
+  clickableUrl?: string
+}
+```
+
+```ts
+type StyledIcon = {
+  icon: string
+  style?: {
+    color?: string
+    colour?: string
+    fontSize?: string
+    opacity?: number
+  }
+}
 ```
 
 ```ts
@@ -1420,31 +1445,6 @@ type TranslatedText = {
 }
 ```
 
-```ts
-type StyledIcon = {
-  icon: string
-  style?: {
-    color?: string
-    colour?: string
-    fontSize?: string
-    opacity?: number
-  }
-}
-```
-
-```ts
-type StyledText = {
-  str: string | EntityName | TranslatedText
-  style?: {
-    color?: string
-    colour?: string
-    fontWeight?: string
-    fontSize?: string
-    fontStyle?: string
-    opacity?: number
-  }
-  clickableUrl?: string
-}
-```
+</details>
 
 ---
